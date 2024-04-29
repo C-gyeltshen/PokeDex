@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: url('https://wallpaperaccess.com/full/404485.jpg') no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    
+  }
+  
+  .logo {
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  .navBar a {
+    position: relative;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    padding-right: 20px;
+  }
+  
+  .navBar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s; 
+  
+  }
+  .navBar a:hover::before {
+    width: 100%;
+  }
+  
+  
+  #fname {
+    margin-left: 20px; 
+    padding: 5px; 
+    border: none; 
+    border-radius: 5px;
+  }
+  
+  #submit {
+    
+    color:black; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+
+  
+/* scrolling effect css */
+.container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.one {
+    background: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700855834.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.two {
+
+    background: url("https://wallpapers.com/images/featured/cool-black-background-zuepoib34iujg4he.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.poke1{
+  width: 80%;
+  height: 80%;
+  /* background-color:white ; */
+  display: flex;
+  flex-direction: column;
+  
+}
+
+#one1{
+  width: 100%;
+  height: 50%;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#one1 * {
+  width: 30%;
+  width: 90%;
+  border-radius: 10px;
+}
+#p1{
+  background-color: aliceblue;
+}
+#p2{
+  background-color: antiquewhite;
+}
+#p3{
+  background-color: aqua;
+}
+
+#two1{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#two1 * {
+  width: 30%;
+  width: 90%;
+  border-radius: 10px;
+}
+#p4{
+  background-color:pink;
+}
+#p5{
+  background-color: red;
+}
+#p6{
+  background-color: gray;
+}
+
+
+.three {
+
+    background: url("https://wallpapers.com/images/featured/cool-black-background-zuepoib34iujg4he.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.poke2{
+  width: 80%;
+  height: 80%;
+  /* background-color:white ; */
+  display: flex;
+  flex-direction: column;
+  
+}
+
+#one2{
+  width: 100%;
+  height: 50%;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#one2 * {
+  width: 30%;
+  width: 90%;
+  border-radius: 10px;
+}
+#p7{
+  background-color: aliceblue;
+}
+#p8{
+  background-color: antiquewhite;
+}
+#p9{
+  background-color: aqua;
+}
+
+#two2{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#two2 * {
+  width: 30%;
+  width: 90%;
+  border-radius: 10px;
+}
+#p10{
+  background-color:pink;
+}
+#p11{
+  background-color: red;
+}
+#p12{
+  background-color: gray;
+}
+
+
+.four {
+
+    background: url("https://wallpapers.com/images/featured/cool-black-background-zuepoib34iujg4he.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.poke3{
+  width: 80%;
+  height: 80%;
+  /* background-color:white ; */
+  display: flex;
+  flex-direction: column;
+  
+}
+
+#one3{
+  width: 100%;
+  height: 50%;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#one3 * {
+  width: 30%;
+  width: 90%;
+  border-radius: 10px;
+}
+#p13{
+  background-color: aliceblue;
+}
+#p14{
+  background-color: antiquewhite;
+}
+#p15{
+  background-color: aqua;
+}
+
+#two3{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#two3 * {
+  width: 30%;
+  width: 90%;
+  border-radius: 10px;
+}
+#p16{
+  background-color:pink;
+}
+#p17{
+  background-color: red;
+}
+#p18{
+  background-color: gray;
+}
+p{
+  font-size: 40px;
+  text-align: center;
+  background-color: white;
+  margin-left: 18px;
+}
