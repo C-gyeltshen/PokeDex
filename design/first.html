@@ -100,56 +100,219 @@
     </div>
 
     <script>
-        window.onload = function (){
-            const searchButton = document.getElementById("submit");
-            searchButton.addEventListener('click', function(event) {
-                event.preventDefault();
-                console.log("button clicked");
-                const name = document.getElementById("poke");
-                const pokeName = name.value.trim();
-                console.log(pokeName);
+        // window.onload = function (){
+        //     const searchButton = document.getElementById("submit");
+        //     searchButton.addEventListener('click', function(event) {
+        //         event.preventDefault();
+        //         console.log("button clicked");
+        //         const name = document.getElementById("poke");
+        //         const pokeName = name.value.trim();
+        //         console.log(pokeName);
 
-                for (let i = 1; i <= 18; i++) { // Changed to 18 as per your requirement
-                    const link = `https://pokeapi.co/api/v2/pokemon/${i}`;
-                    fetch(link)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok');
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            console.log(data);
-                            const pokemonName = data.name;
-                            console.log(pokemonName);
+        //         for (let i = 1; i <= 18; i++) { // Changed to 18 as per your requirement
+        //             const link = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        //             fetch(link)
+        //                 .then(response => {
+        //                     if (!response.ok) {
+        //                         throw new Error('Network response was not ok');
+        //                     }
+        //                     return response.json();
+        //                 })
+        //                 .then(data => {
+        //                     console.log(data);
+        //                     const pokemonName = data.name;
+        //                     console.log(pokemonName);
 
-                            // Update the text content of the <p> tags with the Pokémon name
-                            const divId = 'p' + i;
-                            const pokemonDiv = document.getElementById(divId);
-                            const nameParagraphs = pokemonDiv.querySelectorAll('p');
-                            nameParagraphs.forEach(paragraph => {
-                                paragraph.textContent = pokemonName;
-                            });
+        //                     // Update the text content of the <p> tags with the Pokémon name
+        //                     const divId = 'p' + i;
+        //                     const pokemonDiv = document.getElementById(divId);
+        //                     const nameParagraphs = pokemonDiv.querySelectorAll('p');
+        //                     nameParagraphs.forEach(paragraph => {
+        //                         paragraph.textContent = pokemonName;
+        //                     });
 
-                            // Get the image URL
-                            const imageUrl = data.sprites.front_default;
-                            console.log(imageUrl);
+        //                     // Get the image URL
+        //                     const imageUrl = data.sprites.front_default;
+        //                     console.log(imageUrl);
 
-                            // Create an image element
-                            const img = document.createElement('img');
-                            img.src = imageUrl;
-                            img.alt = pokemonName; // Set alt attribute for accessibility
+        //                     // Create an image element
+        //                     const img = document.createElement('img');
+        //                     img.src = imageUrl;
+        //                     img.alt = pokemonName; // Set alt attribute for accessibility
 
-                            // Append the image to the corresponding div based on index i
-                            pokemonDiv.appendChild(img);
+        //                     // Append the image to the corresponding div based on index i
+        //                     pokemonDiv.appendChild(img);
 
-                            // Change background image of the div
-                            pokemonDiv.style.backgroundImage = `url('${imageUrl}')`;
-                        })
-                        .catch(error => console.error('Error fetching data:', error));
-                }
-            });
-        }
+        //                     // Change background image of the div
+        //                     pokemonDiv.style.backgroundImage = `url('${imageUrl}')`;
+        //                 })
+        //                 .catch(error => console.error('Error fetching data:', error));
+        //         }
+        //     });
+        // }
+//         window.onload = function (){
+//     // Send a fetch request for each Pokémon when the page loads
+//     for (let i = 1; i <= 18; i++) {
+//         const link = `https://pokeapi.co/api/v2/pokemon/${i}`;
+//         fetchPokemonData(link, i);
+//     }
+
+//     const searchButton = document.getElementById("submit");
+//     searchButton.addEventListener('click', function(event) {
+//         event.preventDefault();
+//         console.log("button clicked");
+//         const name = document.getElementById("poke");
+//         const pokeName = name.value.trim();
+//         console.log(pokeName);
+        
+//         // You can choose to fetch additional data here if needed
+//     });
+// }
+
+// function fetchPokemonData(link, i) {
+//     fetch(link)
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error('Network response was not ok');
+//             }
+//             return response.json();
+//         })
+//         .then(data => {
+//             console.log(data);
+//             const pokemonName = data.name;
+//             console.log(pokemonName);
+
+//             // Update the text content of the <p> tags with the Pokémon name
+//             const divId = 'p' + i;
+//             const pokemonDiv = document.getElementById(divId);
+//             const nameParagraphs = pokemonDiv.querySelectorAll('p');
+//             nameParagraphs.forEach(paragraph => {
+//                 paragraph.textContent = pokemonName;
+//             });
+
+//             // Get the image URL
+//             const imageUrl = data.sprites.front_default;
+//             console.log(imageUrl);
+
+//             // Create an image element
+//             const img = document.createElement('img');
+//             img.src = imageUrl;
+//             img.alt = pokemonName; // Set alt attribute for accessibility
+
+//             // Append the image to the corresponding div based on index i
+//             pokemonDiv.appendChild(img);
+
+//             // Change background image of the div
+//             pokemonDiv.style.backgroundImage = `url('${imageUrl}')`;
+//         })
+//         .catch(error => console.error('Error fetching data:', error));
+// }
+// window.onload = function (){
+//     // Fetch data for each Pokémon when the page loads
+//     for (let i = 1; i <= 18; i++) {
+//         const link = `https://pokeapi.co/api/v2/pokemon/${i}`;
+//         fetchPokemonData(link, i);
+//     }
+
+//     const searchButton = document.getElementById("submit");
+//     searchButton.addEventListener('click', function(event) {
+//         event.preventDefault();
+//         console.log("button clicked");
+//         const name = document.getElementById("poke");
+//         const pokeName = name.value.trim();
+//         console.log(pokeName);
+        
+//         // You can choose to fetch additional data here if needed
+//     });
+// }
+
+// function fetchPokemonData(link, i) {
+//     fetch(link)
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error('Network response was not ok');
+//             }
+//             return response.json();
+//         })
+//         .then(data => {
+//             console.log(data);
+//             const pokemonName = data.name;
+//             console.log(pokemonName);
+
+//             // Get the image URL
+//             const imageUrl = data.sprites.front_default;
+//             console.log(imageUrl);
+
+//             // Create an image element
+//             const img = document.createElement('img');
+//             img.src = imageUrl;
+//             img.alt = pokemonName; // Set alt attribute for accessibility
+
+//             // Append the image to the corresponding div based on index i
+//             const divId = 'p' + i;
+//             const pokemonDiv = document.getElementById(divId);
+//             pokemonDiv.innerHTML = ''; // Clear existing content
+//             pokemonDiv.appendChild(img);
+//         })
+//         .catch(error => console.error('Error fetching data:', error));
+// }
+
+window.onload = function (){
+    // Fetch data for each Pokémon when the page loads
+    for (let i = 1; i <= 18; i++) {
+        const link = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        fetchPokemonData(link, i);
+    }
+
+    const searchButton = document.getElementById("submit");
+    searchButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        console.log("button clicked");
+        const name = document.getElementById("poke");
+        const pokeName = name.value.trim();
+        console.log(pokeName);
+        
+        // You can choose to fetch additional data here if needed
+    });
+}
+
+function fetchPokemonData(link, i) {
+    fetch(link)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            const pokemonName = data.name;
+            console.log(pokemonName);
+
+            // Get the image URL
+            const imageUrl = data.sprites.front_default;
+            console.log(imageUrl);
+
+            // Create an image element
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.alt = pokemonName; // Set alt attribute for accessibility
+
+            // Create a paragraph element for the name
+            const nameParagraph = document.createElement('p');
+            nameParagraph.textContent = pokemonName;
+
+            // Append both the image and name paragraph to the corresponding div based on index i
+            const divId = 'p' + i;
+            const pokemonDiv = document.getElementById(divId);
+            pokemonDiv.innerHTML = ''; // Clear existing content
+            pokemonDiv.appendChild(img);
+            pokemonDiv.appendChild(nameParagraph);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+
     </script>
 </body>
 </html>

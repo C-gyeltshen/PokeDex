@@ -289,3 +289,10 @@ p{
   background-color: white;
   margin-left: 18px;
 }
+/* Add this CSS rule to apply a common background image for elements with IDs p1 to p18 */
+#p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9, #p10, #p11, #p12, #p13, #p14, #p15, #p16, #p17, #p18 {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqMopPlrgfivHg7Fmzk0hfwGiPXBgeRSmNlA&s")no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
