@@ -100,62 +100,95 @@
     </div>
 
     <script>
-
-window.onload = function (){
-    // Fetch data for each Pokémon when the page loads
-    for (let i = 1; i <= 18; i++) {
-        const link = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        fetchPokemonData(link, i);
-    }
-
-    const searchButton = document.getElementById("submit");
-    searchButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        console.log("button clicked");
-        window.location.href = "search.html"
-        const name = document.getElementById("poke");
-        const pokeName = name.value.trim();
-        console.log(pokeName);
-        
-        // You can choose to fetch additional data here if needed
-    });
-}
-
-function fetchPokemonData(link, i) {
-    fetch(link)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+        window.onload = function (){
+            // Fetch data for each Pokemon Api when the page loads
+            for (let i = 1; i <= 18; i++) {
+                const link = `https://pokeapi.co/api/v2/pokemon/${i}`;
+                fetchPokemonData(link, i);
             }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            const pokemonName = data.name;
-            console.log(pokemonName);
 
-            // Get the image URL
-            const imageUrl = data.sprites.front_default;
-            console.log(imageUrl);
+            const searchButton = document.getElementById("submit");
+            searchButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("button clicked");
+                window.location.href = "search.html"
+                const name = document.getElementById("poke");
+                const pokeName = name.value.trim();
+                console.log(pokeName);
 
-            // Create an image element
-            const img = document.createElement('img');
-            img.src = imageUrl;
-            img.alt = pokemonName; // Set alt attribute for accessibility
+                // Specify the API endpoint for user data
+                const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
 
-            // Create a paragraph element for the name
-            const nameParagraph = document.createElement('p');
-            nameParagraph.textContent = pokemonName;
+                // Make a GET request using the Fetch API
+                fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(pokemonData => {
+                    // Process the retrieved Pokemon data
+                    console.log('Pokemon Data:', pokemonData);
 
-            // Append both the image and name paragraph to the corresponding div based on index i
-            const divId = 'p' + i;
-            const pokemonDiv = document.getElementById(divId);
-            pokemonDiv.innerHTML = ''; // Clear existing content
-            pokemonDiv.appendChild(img);
-            pokemonDiv.appendChild(nameParagraph);
-        })
-        .catch(error => console.error('Error fetching data:', error));
-}
+                    // Extract the Pokemon image URL from the response data
+                    const pokemonImageUrl = pokemonData.sprites.front_default;
+
+                    // Store the Pokemon image URL in local storage
+                    saveToLocalStorage(pokemonImageUrl);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        }
+
+        function fetchPokemonData(link, i) {
+            fetch(link)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // console.log(data);
+                    const pokemonName = data.name;
+                    // console.log(pokemonName);
+
+                    // Get the image URL
+                    const imageUrl = data.sprites.front_default;
+                    // console.log(imageUrl);
+
+                    // Create an image element
+                    const img = document.createElement('img');
+                    img.src = imageUrl;
+                    img.alt = pokemonName; // Set alt attribute for accessibility
+
+                    // Create a paragraph element for the name
+                    const nameParagraph = document.createElement('p');
+                    nameParagraph.textContent = pokemonName;
+
+                    // Append both the image and name paragraph to the corresponding div based on index i
+                    const divId = 'p' + i;
+                    const pokemonDiv = document.getElementById(divId);
+                    pokemonDiv.innerHTML = ''; // Clear existing content
+                    pokemonDiv.appendChild(img);
+                    pokemonDiv.appendChild(nameParagraph);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Function to save Pokemon image URL to local storage
+        function saveToLocalStorage(pokemonImageUrl) {
+            // Check if local storage is supported by the browser
+            if (typeof(Storage) !== "undefined") {
+                // Save the Pokemon image URL in local storage
+                localStorage.setItem("pokemonImageUrl", pokemonImageUrl);
+            } else {
+                console.error("Local storage is not supported by this browser.");
+            }
+        }
     </script>
 </body>
 </html>

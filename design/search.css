@@ -1,4 +1,3 @@
-/* naveBar for search page */
 * {
   margin: 0;
   padding: 0;
@@ -53,9 +52,9 @@ header {
   width: 0;
   height: 2px;
   background: white;
-  transition: width 0.3s; /* Corrected the transition property */
-}
+  transition: width 0.3s; 
 
+}
 .navBar a:hover::before {
   width: 100%;
 }
@@ -78,71 +77,105 @@ header {
 }
 
 
-/* Scrolling Effect */
-.container{
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-}
+      /* Sections */
+      .one {
+        background: url("https://cdn.wallpapersafari.com/0/52/7t85ML.jpg") no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
 
-section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
-}
-.one{
-  background: url("https://cdn.wallpapersafari.com/0/52/7t85ML.jpg") no-repeat;
-  background-position: center;
-  background-size: cover;
+      .two {
+        background: url("https://cdn.wallpapersafari.com/0/52/7t85ML.jpg") no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
 
-}
-.pImage{
-  width: 70%;
-  height: 100%;
-  background-color: aqua;
-}
-#first{
-  width: 100%;
-  height: 60%;
-  background: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/24/120467-Pokemon-748x421.jpg")no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-#pokeImage{
-  width: 60%;
-  height: 100%;
-  background-color: blue;
-  margin: auto;
-  border-radius: 50%;
-}
-#second{
-  width: 100%;
-  height: 40%;
-  background-color:burlywood;
-}
-#pInfo{
-  width: 90%;
-  height: 90%;
-  background-color: aqua;
-  margin: auto;
-  padding-top: 10px;
+      /* General Styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
- 
-}
+      body {
+        min-height: 100vh;
+        background: url('https://wallpaperaccess.com/full/404485.jpg') no-repeat;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
 
-.two{
-  background: url("https://cdn.wallpapersafari.com/0/52/7t85ML.jpg") no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.pData{
-  width: 80%;
-  height: 100%;
-  background-color: aqua;
-}
+      /* Hover effect on navigation links */
+      .navBar a::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 0.3s;
+      }
 
+      .navBar a:hover::before {
+        width: 100%;
+      }
 
+      /* Container for scroll effect */
+      .container {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+      }
 
+      /* Styling for sections */
+      section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-snap-align: start;
+      }
 
+      /* Placeholder styling for content */
+      .pImage {
+        width: 70%;
+        height: 100%;
+        background-color: aqua;
+      }
+
+      #first {
+        width: 100%;
+        height: 60%;
+        background: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/24/120467-Pokemon-748x421.jpg") no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      #pokeImage {
+        width: 60%;
+        height: 100%;
+        background-color: blue;
+        margin: auto;
+        border-radius: 50%;
+      }
+
+      #second {
+        width: 100%;
+        height: 40%;
+        background-color: burlywood;
+      }
+
+      #pInfo {
+        width: 90%;
+        height: 90%;
+        background-color: aqua;
+        margin: auto;
+        padding-top: 10px;
+      }
+
+      .pData {
+        width: 80%;
+        height: 100%;
+        background-color: aqua;
+      }
