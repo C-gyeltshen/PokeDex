@@ -1,3 +1,9 @@
+/* Imported pokemon font */
+@font-face {
+  font-family: ok;
+  src: url("/Users/chimigyeltshen/Desktop/Sem2 /WEB101/pokeDex/font/Pokemon_Hollow.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +12,6 @@
 
 body {
   min-height: 100vh;
-  background: url('https://wallpaperaccess.com/full/404485.jpg') no-repeat;
   height: 100%;
   background-position: center;
   background-size: cover;
@@ -77,105 +82,79 @@ header {
 }
 
 
-      /* Sections */
-      .one {
-        background: url("https://cdn.wallpapersafari.com/0/52/7t85ML.jpg") no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
+.container{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
 
-      .two {
-        background: url("https://cdn.wallpapersafari.com/0/52/7t85ML.jpg") no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+.one {
+  background: url("https://dotesports.com/wp-content/uploads/2023/05/Master-Ball-teaser-Pokemon-GO.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
-      /* General Styling */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+.two {
 
-      body {
-        min-height: 100vh;
-        background: url('https://wallpaperaccess.com/full/404485.jpg') no-repeat;
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-      }
+  background: url("https://cdn.wallpapersafari.com/0/52/7t85ML.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
-      /* Hover effect on navigation links */
-      .navBar a::before {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: white;
-        transition: width 0.3s;
-      }
+.placeholder1 {
+  width: 70%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+#space{
+  width: 100%;
+  height: 28%;
+}
+#pImage{
+  width: 100%;
+  height: 30%;
+  background-position: center;
+  background-size: cover;
 
-      .navBar a:hover::before {
-        width: 100%;
-      }
+}
+#image{
+  width: 25%;
+  height: 100%;
+  background-color:black;
+  margin: auto;
+  border-radius: 50%;
+}
+#space2{
+  width:100%;
+  height:9%;
+}
+#details{
+  width: 100%;
+  height: 33%;
+}
+#pInfo{
+  width: 90%;
+  height: 80%;
+  border-radius: 20px;
+  margin: auto;
+}
+h1{
+  text-align: center;
+  font-size: 85px;
+  font-family: ok;
+  color: aliceblue;
+}
 
-      /* Container for scroll effect */
-      .container {
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        height: 100vh;
-      }
-
-      /* Styling for sections */
-      section {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        scroll-snap-align: start;
-      }
-
-      /* Placeholder styling for content */
-      .pImage {
-        width: 70%;
-        height: 100%;
-        background-color: aqua;
-      }
-
-      #first {
-        width: 100%;
-        height: 60%;
-        background: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/24/120467-Pokemon-748x421.jpg") no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
-
-      #pokeImage {
-        width: 60%;
-        height: 100%;
-        background-color: blue;
-        margin: auto;
-        border-radius: 50%;
-      }
-
-      #second {
-        width: 100%;
-        height: 40%;
-        background-color: burlywood;
-      }
-
-      #pInfo {
-        width: 90%;
-        height: 90%;
-        background-color: aqua;
-        margin: auto;
-        padding-top: 10px;
-      }
-
-      .pData {
-        width: 80%;
-        height: 100%;
-        background-color: aqua;
-      }
+.placeholder2 {
+  width: 70%;
+  height: 100%;
+  background-color: aquamarine;
+}
