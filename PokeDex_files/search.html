@@ -22,7 +22,9 @@
             <div class="placeholder1">
                 <div id="space"></div>
                 <div id="pImage">
-                    <div id="image"></div>
+                    <div id="image">
+                        <img src="#" alt="">
+                    </div>
                 </div>
                 <div id="space2">
                     <div id="s1"></div>
@@ -70,5 +72,49 @@
             </div>
         </section>
     </div>
-</body>
-</html>
+    <script>
+        window.onload = function() {
+        // Get the image element
+        const imageElement = document.getElementById('image').querySelector('img');
+
+        // Check if local storage is supported
+        if (typeof(Storage) !== "undefined") {
+            // Retrieve the image URL from local storage
+            const imageUrl = localStorage.getItem('pokemonImageUrl');
+
+            // If the URL exists, set it as the image source
+            if (imageUrl) {
+            imageElement.src = imageUrl;
+            }
+        } else {
+            // Handle the case where local storage is not supported
+            console.error('Local storage is not supported by your browser.');
+        }
+        };
+
+    </script>
+</html> 
+
+
+<!-- 
+<script>
+    window.onload = function() {
+    // Get the image element
+    const imageElement = document.getElementById('image1');
+
+    // Check if local storage is supported
+    if (typeof(Storage) !== "undefined") {
+        // Retrieve the image URL from local storage
+        const imageUrl = localStorage.getItem('pokemonImageUrl');
+
+        // If the URL exists, set it as the image source
+        if (imageUrl) {
+        imageElement.src = imageUrl;
+        }
+    } else {
+        // Handle the case where local storage is not supported
+        console.error('Local storage is not supported by your browser.');
+    }
+    };
+
+</script> -->
