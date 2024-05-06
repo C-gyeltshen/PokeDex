@@ -10,8 +10,8 @@
     <header class="header">
         <a href="#" class="logo">LOGO</a>
         <nav class="navBar">
-            <a href="#" id="seen">Seen</a>
-            <a href="#" id="fav">Favourite</a>
+            <a href="seen.html" id="seen">Seen</a>
+            <a href="favourate.html" id="fav">Favourite</a>
             <input type="text" id="poke" name="fname">
             <input type="submit" id="submit" value="Search">
         </nav>
@@ -98,8 +98,6 @@
             </div>
         </section>
     </div>
-
-
     <script>
         window.onload = function (){
             // Fetch data for each Pokemon Api when the page loads
@@ -107,7 +105,7 @@
                 const link = `https://pokeapi.co/api/v2/pokemon/${i}`;
                 fetchPokemonData(link, i);
             }
-
+        
             const searchButton = document.getElementById("submit");
             searchButton.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -116,7 +114,7 @@
                 const name = document.getElementById("poke");
                 const pokeName = name.value.trim().toLowerCase();
                 console.log(pokeName);
-
+        
                 // Make a GET request using the Fetch API
                 fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
                 .then(response => {
@@ -132,12 +130,12 @@
                 .then(pokemonData => {
                     // Process the retrieved Pokemon data
                     console.log('Pokemon Data:', pokemonData);
-
+        
                     // Extract the Pokemon image URL from the response data
                     const pokemonImageUrl = pokemonData.sprites.front_default;
-
-                    // Save the image URL to local storage, clearing other data
-                    saveToLocalStorage(pokemonImageUrl);
+        
+                    // Save the image URL and Pokemon name to local storage
+                    saveToLocalStorage(pokemonImageUrl, pokemonData.name); // Pass the correct pokemonName
                 })
                 .catch(error => {
                     console.error('Error:', error.message);
@@ -150,7 +148,7 @@
                 });
             });
         }
-
+        
         function fetchPokemonData(link, i) {
             fetch(link)
                 .then(response => {
@@ -161,22 +159,22 @@
                 })
                 .then(data => {
                     // console.log(data);
-                    const pokemonName = data.name;
+                    const pokemonName = data.name; // Access the correct property for the name
                     // console.log(pokemonName);
-
+        
                     // Get the image URL
                     const imageUrl = data.sprites.front_default;
                     // console.log(imageUrl);
-
+        
                     // Create an image element
                     const img = document.createElement('img');
                     img.src = imageUrl;
                     img.alt = pokemonName; // Set alt attribute for accessibility
-
+        
                     // Create a paragraph element for the name
                     const nameParagraph = document.createElement('p');
                     nameParagraph.textContent = pokemonName;
-
+        
                     // Append both the image and name paragraph to the corresponding div based on index i
                     const divId = 'p' + i;
                     const pokemonDiv = document.getElementById(divId);
@@ -186,7 +184,8 @@
                 })
                 .catch(error => console.error('Error fetching data:', error));
         }
-        function saveToLocalStorage(imageUrl) {
+        
+        function saveToLocalStorage(imageUrl, pokemonName) {
             // Check if local storage is populated before saving the new image URL
             if (localStorage.length > 0) {
                 // Clear local storage if it's populated
@@ -194,8 +193,10 @@
             }
             // Save the Pokemon image URL
             localStorage.setItem("pokemonImageUrl", imageUrl);
-            }
-
+        
+            // Save the Pokemon name
+            localStorage.setItem("pokemonName", pokemonName);
+        }
     </script>
 </body>
 </html>

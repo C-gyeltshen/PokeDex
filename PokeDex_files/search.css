@@ -123,7 +123,10 @@ section {
 #image{
   width: 25%;
   height: 100%;
-  background-color:black;
+  background-color:#646f72;
+  background: url("https://wallpapers.com/images/hd/gfx-background-ksxz300dbhmcagqi.jpg")no-repeat;
+  background-position: center;
+  background-size: cover;
   margin: auto;
   border-radius: 60%;
 
@@ -211,7 +214,7 @@ h1{
 #pDiv{
   width: 20%;
   height: 100%;
-  background-color:pink;
+  background-color:skyblue;
   border-radius: 50%;
 }
 #space4{
@@ -286,6 +289,11 @@ p{
   font-weight: bold;
 }
 #image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#pDiv img {
   object-fit: cover;
   width: 100%;
   height: 100%;

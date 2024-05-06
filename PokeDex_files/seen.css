@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    
+  }
+  
+  .logo {
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  .navBar a {
+    position: relative;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    padding-right: 20px;
+  }
+  
+  .navBar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s; 
+  
+  }
+  .navBar a:hover::before {
+    width: 100%;
+  }
+  
+  
+  #fname {
+    margin-left: 20px; 
+    padding: 5px; 
+    border: none; 
+    border-radius: 5px;
+  }
+  
+  #submit {
+    
+    color:black; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+  .container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.one {
+    background: url("https://e0.pxfuel.com/wallpapers/374/343/desktop-wallpaper-abstract-futuristic-telecom.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.two {
+
+    background: url("https://e0.pxfuel.com/wallpapers/374/343/desktop-wallpaper-abstract-futuristic-telecom.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.three {
+
+    background: url("https://e0.pxfuel.com/wallpapers/374/343/desktop-wallpaper-abstract-futuristic-telecom.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.main1{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+#placeholder1{
+    width: 100%;
+    height: 45%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+#poke1,#poke2, #poke3 {
+    width: 30%;
+    height: 90%;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+#placeholder2{
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#poke4, #poke5, #poke6 {
+    width: 30%;
+    height: 90%;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+.main2{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+#placeholder3{
+    width: 100%;
+    height: 45%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#poke7, #poke8, #poke9{
+    width: 30%;
+    height: 90%;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+#placeholder4{
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#poke10, #poke11, #poke12{
+    width: 30%;
+    height: 90%;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+.main3{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#placeholder5{
+    width: 100%;
+    height: 45%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#poke13, #poke14, #poke15{
+    width: 30%;
+    height: 90%;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+#placeholder6{
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#poke16, #poke17, #poke18{
+    width: 30%;
+    height: 90%;
+    background-color: aquamarine;
+    border-radius: 10px;
+
+}

@@ -9,10 +9,10 @@
 </head>
 <body>
     <header class="header">
-        <a href="first.html" class="logo">LOGO</a>
+        <a href="index.html" class="logo">LOGO</a>
         <nav class="navBar">
-            <a href="#" id="seen">Seen</a>
-            <a href="#" id="fav">Favourite</a>
+            <a href="seen.html" id="seen">Seen</a>
+            <a href="favourate.html" id="fav">Favourite</a>
             <input type="text" id="poke" name="fname">
             <input type="submit" id="submit" value="Search">
         </nav>
@@ -38,7 +38,7 @@
                 </div>
                 <div id="details">
                     <div id="pInfo">
-                        <h1>Pokemon name</h1>
+                        <h1 id="nameP">Pokemon name</h1>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,9 @@
                 <div id="space3"></div>
                 <div id="rectangle">
                     <div id="space6"></div>
-                    <div id="pDiv"></div>
+                    <div id="pDiv">
+                        <img src="#" alt="">
+                    </div>
                 </div>
                 <div id="space4"></div>
                 <div id="infoBox">
@@ -61,7 +63,7 @@
                         <div id="d2"></div>
                         <div id="d3">
                             <ul>
-                                <li><a class="active" href="#">About</a></li>
+                                <li><a class="active" href="#">About</a></li> 
                                 <li><a href="#news">Basic</a></li>
                                 <li><a href="#contact">Moves</a></li>
                               </ul>
@@ -74,47 +76,30 @@
     </div>
     <script>
         window.onload = function() {
-        // Get the image element
-        const imageElement = document.getElementById('image').querySelector('img');
 
-        // Check if local storage is supported
-        if (typeof(Storage) !== "undefined") {
-            // Retrieve the image URL from local storage
-            const imageUrl = localStorage.getItem('pokemonImageUrl');
+            // Get the image element
+            const imageElement = document.getElementById('image').querySelector('img');
+            const imagePage2 = document.getElementById('pDiv').querySelector('img');
+            const PName = document.getElementById("nameP")
 
-            // If the URL exists, set it as the image source
-            if (imageUrl) {
-            imageElement.src = imageUrl;
+            // Check if local storage is supported
+            if (typeof(Storage) !== "undefined") {
+                // Retrieve the image URL from local storage
+                const imageUrl = localStorage.getItem('pokemonImageUrl');
+                const poName = localStorage.getItem('pokemonName');
+
+                // If the URL exists, set it as the image source
+                if (imageUrl) {
+                imageElement.src = imageUrl;
+                imagePage2.src = imageUrl;
+                PName.innerHTML = poName
+
+                }
+            } else {
+                // Handle the case where local storage is not supported
+                console.error('Local storage is not supported by your browser.');
             }
-        } else {
-            // Handle the case where local storage is not supported
-            console.error('Local storage is not supported by your browser.');
-        }
-        };
+            };
 
     </script>
 </html> 
-
-
-<!-- 
-<script>
-    window.onload = function() {
-    // Get the image element
-    const imageElement = document.getElementById('image1');
-
-    // Check if local storage is supported
-    if (typeof(Storage) !== "undefined") {
-        // Retrieve the image URL from local storage
-        const imageUrl = localStorage.getItem('pokemonImageUrl');
-
-        // If the URL exists, set it as the image source
-        if (imageUrl) {
-        imageElement.src = imageUrl;
-        }
-    } else {
-        // Handle the case where local storage is not supported
-        console.error('Local storage is not supported by your browser.');
-    }
-    };
-
-</script> -->
